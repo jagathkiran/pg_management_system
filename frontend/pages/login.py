@@ -1,4 +1,10 @@
 import streamlit as st
+import sys
+import os
+
+# Add parent directory to path to allow imports from components and utils
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from utils.api_client import APIClient
 from utils.session import login_user, init_session, is_authenticated, get_user_role
 import os

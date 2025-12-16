@@ -1,4 +1,10 @@
 import streamlit as st
+import sys
+import os
+
+# Add current directory to path to allow imports from utils
+sys.path.append(os.path.dirname(__file__))
+
 from utils.session import init_session, is_authenticated, get_user_role
 from utils.api_client import APIClient
 import os
