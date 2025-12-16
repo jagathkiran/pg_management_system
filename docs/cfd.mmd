@@ -1,0 +1,27 @@
+flowchart TD
+    Start([User Interaction]) --> Frontend[Streamlit Frontend]
+    Frontend -->|API Request| Router[FastAPI Router]
+    
+    subgraph Backend_Logic
+        Router --> AuthCheck{Is Authenticated?}
+        AuthCheck -- No --> AuthFail[Return 401 Unauthorized]
+        AuthCheck -- Yes --> RoleCheck{Role Authorized?}
+        
+        RoleCheck -- No --> RoleFail[Return 403 Forbidden]
+        RoleCheck -- Yes --> Handler[Execute Route Handler]
+        
+        Handler --> Validate["Validate Input (Pydantic)"]
+        Validate -- Invalid --> ValFail[Return 422 Error]
+        Validate -- Valid --> BusinessLogic[Business Logic]
+        
+        BusinessLogic --> DB_Op["Database Operation (SQLAlchemy)"]
+        DB_Op -->|Result| BusinessLogic
+        BusinessLogic --> Response[Format Response]
+    end
+    
+    Response --> Frontend
+    Frontend --> Display[Update UI]
+    
+    AuthFail --> Frontend
+    RoleFail --> Frontend
+    ValFail --> Frontend

@@ -1,0 +1,54 @@
+graph TD
+    %% Entities
+    Admin[Admin User]
+    Tenant[Tenant User]
+    
+    %% Processes
+    P_Auth[Authentication Process]
+    P_Rooms[Room Management]
+    P_Tenants[Tenant Management]
+    P_Payments[Payment Processing]
+    P_Maint[Maintenance Management]
+    P_Reports[Reporting Engine]
+    
+    %% Data Stores
+    DB_Users[(User DB)]
+    DB_Rooms[(Room DB)]
+    DB_Tenants[(Tenant DB)]
+    DB_Payments[(Payment DB)]
+    DB_Maint[(Maintenance DB)]
+    
+    %% Data Flows - Auth
+    Admin -->|Credentials| P_Auth
+    Tenant -->|Credentials| P_Auth
+    P_Auth <-->|Verify/Token| DB_Users
+    
+    %% Data Flows - Admin
+    Admin -->|Room Details| P_Rooms
+    P_Rooms -->|Save/Update| DB_Rooms
+    
+    Admin -->|Tenant Info| P_Tenants
+    P_Tenants -->|Create/Update| DB_Tenants
+    P_Tenants -->|Link User| DB_Users
+    P_Tenants -.->|Check Availability| DB_Rooms
+    
+    Admin -->|Verify Payment| P_Payments
+    P_Payments -->|Update Status| DB_Payments
+    
+    Admin -->|Update Status| P_Maint
+    P_Maint -->|Update Ticket| DB_Maint
+    
+    Admin -->|Request Stats| P_Reports
+    P_Reports <-->|Fetch Data| DB_Payments
+    P_Reports <-->|Fetch Data| DB_Rooms
+    P_Reports <-->|Fetch Data| DB_Tenants
+    
+    %% Data Flows - Tenant
+    Tenant -->|Submit Payment| P_Payments
+    P_Payments -->|Save Record| DB_Payments
+    
+    Tenant -->|Submit Request| P_Maint
+    P_Maint -->|Save Ticket| DB_Maint
+    
+    Tenant -->|View Profile| P_Tenants
+    DB_Tenants -->|Profile Data| P_Tenants
