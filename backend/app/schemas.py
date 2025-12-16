@@ -28,6 +28,11 @@ class PaymentBase(BaseModel):
     payment_method: str = "Bank Transfer"
     transaction_id: str
     payment_month: date
+    proof_image_path: Optional[str] = None
+
+class PaymentUpdate(BaseModel):
+    status: Optional[PaymentStatus] = None
+    remarks: Optional[str] = None
 
 class MaintenanceBase(BaseModel):
     category: MaintenanceCategory
