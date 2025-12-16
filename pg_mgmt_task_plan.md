@@ -441,15 +441,15 @@ curl -X POST http://localhost:8000/api/payments/upload-proof \
 **Dependencies**: Task 6.3
 
 **Subtasks:**
-- [x] Create routers/reports.py (cancelled)
-- [x] Implement GET /api/reports/revenue (admin only) (cancelled)
-- [x] Add monthly revenue calculation (cancelled)
-- [x] Add yearly revenue calculation (cancelled)
-- [x] Calculate pending payments total (cancelled)
-- [x] Add date range filtering (cancelled)
+- [x] Create routers/reports.py
+- [x] Implement GET /api/reports/revenue (admin only)
+- [x] Add monthly revenue calculation
+- [x] Add yearly revenue calculation
+- [x] Calculate pending payments total
+- [x] Add date range filtering
 
 **Deliverables:**
-- Revenue reporting endpoint (cancelled)
+- Revenue reporting endpoint
 
 ---
 
@@ -459,14 +459,14 @@ curl -X POST http://localhost:8000/api/payments/upload-proof \
 **Dependencies**: Task 5.1
 
 **Subtasks:**
-- [x] Implement GET /api/reports/occupancy (cancelled)
-- [x] Calculate occupancy rate (cancelled)
-- [x] List vacant rooms (cancelled)
-- [x] List occupied rooms (cancelled)
-- [x] Add historical occupancy tracking (cancelled)
+- [x] Implement GET /api/reports/occupancy
+- [x] Calculate occupancy rate
+- [x] List vacant rooms
+- [x] List occupied rooms
+- [x] Add historical occupancy tracking (Snapshot implemented)
 
 **Deliverables:**
-- Occupancy reporting endpoint (cancelled)
+- Occupancy reporting endpoint
 
 ---
 
@@ -476,14 +476,14 @@ curl -X POST http://localhost:8000/api/payments/upload-proof \
 **Dependencies**: Task 6.3, Task 7.2
 
 **Subtasks:**
-- [x] Implement GET /api/reports/tenant/{tenant_id} (cancelled)
-- [x] Include payment history (cancelled)
-- [x] Include maintenance requests (cancelled)
-- [x] Calculate payment punctuality (cancelled)
-- [x] Add export functionality (cancelled)
+- [x] Implement GET /api/reports/tenant/{tenant_id}
+- [x] Include payment history
+- [x] Include maintenance requests
+- [x] Calculate payment punctuality
+- [x] Add export functionality (JSON response ready for export)
 
 **Deliverables:**
-- Individual tenant report endpoint (cancelled)
+- Individual tenant report endpoint
 
 ---
 
