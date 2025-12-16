@@ -4,15 +4,9 @@ from jose import JWTError, jwt
 from sqlalchemy.orm import Session
 from backend.app import database, models, schemas, auth
 from backend.app.config import settings
+from backend.app.database import get_db
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="api/auth/login")
-
-def get_db():
-    db = database.SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 async def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)):
     credentials_exception = HTTPException(
