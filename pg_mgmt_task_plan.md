@@ -696,14 +696,14 @@ streamlit run frontend/app.py
 **Dependencies**: Task 11.1, Task 7.2
 
 **Subtasks:**
-- [ ] Create components/maintenance_mgmt.py
-- [ ] Display all maintenance requests
-- [ ] Add filter by status/priority/category
-- [ ] Show request details
-- [ ] Add status update functionality
-- [ ] Add resolution notes field
-- [ ] Display request images
-- [ ] Show statistics (open, in-progress, resolved)
+- [x] Create components/maintenance_mgmt.py
+- [x] Display all maintenance requests
+- [x] Add filter by status/priority/category
+- [x] Show request details
+- [x] Add status update functionality
+- [x] Add resolution notes field
+- [x] Display request images
+- [x] Show statistics (open, in-progress, resolved)
 
 **Deliverables:**
 - Complete maintenance management interface
@@ -716,13 +716,13 @@ streamlit run frontend/app.py
 **Dependencies**: Task 11.1, Task 8.1, Task 8.2
 
 **Subtasks:**
-- [ ] Create components/financial_dashboard.py
-- [ ] Display total revenue
-- [ ] Show pending payments
-- [ ] Display deposit summary
-- [ ] Add revenue charts (monthly/yearly)
-- [ ] Show occupancy rate
-- [ ] Add export report functionality
+- [x] Create components/financial_dashboard.py
+- [x] Display total revenue
+- [x] Show pending payments
+- [x] Display deposit summary
+- [x] Add revenue charts (monthly/yearly)
+- [x] Show occupancy rate
+- [x] Add export report functionality
 
 **Deliverables:**
 - Financial overview dashboard
@@ -737,11 +737,11 @@ streamlit run frontend/app.py
 **Dependencies**: Task 10.2
 
 **Subtasks:**
-- [ ] Create pages/tenant_dashboard.py
-- [ ] Add sidebar navigation
-- [ ] Create sections (Profile, Rent Payment, Maintenance)
-- [ ] Display tenant info header
-- [ ] Add logout button
+- [x] Create pages/tenant_dashboard.py
+- [x] Add sidebar navigation
+- [x] Create sections (Profile, Rent Payment, Maintenance)
+- [x] Display tenant info header
+- [x] Add logout button
 
 **Deliverables:**
 - Tenant dashboard layout
@@ -754,12 +754,12 @@ streamlit run frontend/app.py
 **Dependencies**: Task 12.1
 
 **Subtasks:**
-- [ ] Create components/tenant_profile.py
-- [ ] Display personal details
-- [ ] Display room details
-- [ ] Show deposit information
-- [ ] Add edit contact info form
-- [ ] Show check-in date
+- [x] Create components/tenant_profile.py
+- [x] Display personal details
+- [x] Display room details
+- [x] Show deposit information
+- [x] Add edit contact info form
+- [x] Show check-in date
 
 **Deliverables:**
 - Tenant profile interface
@@ -772,15 +772,15 @@ streamlit run frontend/app.py
 **Dependencies**: Task 12.1, Task 6.1
 
 **Subtasks:**
-- [ ] Create components/payment_submission.py
-- [ ] Show current month rent status
-- [ ] Add payment submission form
-- [ ] Implement file upload for proof
-- [ ] Add payment method dropdown
-- [ ] Add transaction ID field
-- [ ] Display payment history
-- [ ] Show verification status
-- [ ] Add download receipt option
+- [x] Create components/payment_submission.py
+- [x] Show current month rent status
+- [x] Add payment submission form
+- [x] Implement file upload for proof
+- [x] Add payment method dropdown
+- [x] Add transaction ID field
+- [x] Display payment history
+- [x] Show verification status
+- [x] Add download receipt option
 
 **Deliverables:**
 - Complete payment submission interface
@@ -798,15 +798,15 @@ streamlit run frontend/app.py
 **Dependencies**: Task 12.1, Task 7.1
 
 **Subtasks:**
-- [ ] Create components/maintenance_request.py
-- [ ] Add "Create Request" form
-- [ ] Add category dropdown
-- [ ] Add priority selection
-- [ ] Add description text area
-- [ ] Implement image upload
-- [ ] Display own request history
-- [ ] Show request status
-- [ ] Display resolution notes
+- [x] Create components/maintenance_request.py
+- [x] Add "Create Request" form
+- [x] Add category dropdown
+- [x] Add priority selection
+- [x] Add description text area
+- [x] Implement image upload
+- [x] Display own request history
+- [x] Show request status
+- [x] Display resolution notes
 
 **Deliverables:**
 - Complete maintenance request interface
@@ -824,12 +824,12 @@ streamlit run frontend/app.py
 **Dependencies**: Task 12.1
 
 **Subtasks:**
-- [ ] Create components/notifications.py
-- [ ] Display rent due reminders
-- [ ] Show maintenance update notifications
-- [ ] Display announcements
-- [ ] Add mark as read functionality
-- [ ] Add notification count badge
+- [x] Create components/notifications.py
+- [x] Display rent due reminders
+- [x] Show maintenance update notifications
+- [x] Display announcements
+- [x] Add mark as read functionality
+- [x] Add notification count badge
 
 **Deliverables:**
 - Notifications interface
