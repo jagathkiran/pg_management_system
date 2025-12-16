@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from backend.app.routers import auth, rooms, tenants, payments
+from backend.app.routers import auth, rooms, tenants, payments, maintenance
 from backend.app.database import engine, Base
 
 # Create tables
@@ -11,6 +11,7 @@ app.include_router(auth.router)
 app.include_router(rooms.router)
 app.include_router(tenants.router)
 app.include_router(payments.router)
+app.include_router(maintenance.router)
 
 @app.get("/")
 def read_root():

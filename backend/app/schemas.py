@@ -34,6 +34,10 @@ class PaymentUpdate(BaseModel):
     status: Optional[PaymentStatus] = None
     remarks: Optional[str] = None
 
+class MaintenanceUpdate(BaseModel):
+    status: Optional[MaintenanceStatus] = None
+    resolution_notes: Optional[str] = None
+
 class MaintenanceBase(BaseModel):
     category: MaintenanceCategory
     priority: MaintenancePriority
