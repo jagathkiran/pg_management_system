@@ -7,6 +7,7 @@ sys.path.append(os.path.dirname(__file__))
 
 from utils.session import init_session, is_authenticated, get_user_role
 from utils.api_client import APIClient
+from utils.ui import render_auth_sidebar
 import os
 
 # Page Configuration
@@ -26,7 +27,17 @@ def main():
     
     # Routing
     if not is_authenticated():
-        st.switch_page("pages/login.py")
+        render_auth_sidebar(current_page="home")
+            
+        st.write("# Welcome to the PG Management System")
+        st.info("Please use the sidebar to Login or Sign Up.")
+        
+        st.markdown("""
+        ### Features
+        - **Admins**: Manage Rooms, Tenants, Payments, and Maintenance.
+        - **Tenants**: View Profile, Pay Rent, Request Maintenance.
+        """)
+        
     else:
         role = get_user_role()
         if role == "admin":

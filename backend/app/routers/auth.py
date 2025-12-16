@@ -10,6 +10,26 @@ router = APIRouter(
     tags=["auth"]
 )
 
+@router.post("/register-admin", response_model=schemas.UserResponse, status_code=status.HTTP_201_CREATED)
+def register_admin(
+    user_create: schemas.UserCreate,
+    db: Session = Depends(dependencies.get_db)
+):
+    if db.query(models.User).filter(models.User.email == user_create.email).first():
+        raise HTTPException(status_code=400, detail="Email already registered")
+    
+    hashed_password = auth.get_password_hash(user_create.password)
+    new_user = models.User(
+        email=user_create.email,
+        hashed_password=hashed_password,
+        role=models.UserRole.ADMIN,
+        is_active=True
+    )
+    db.add(new_user)
+    db.commit()
+    db.refresh(new_user)
+    return new_user
+
 @router.post("/login", response_model=schemas.Token)
 async def login(login_data: schemas.UserLogin, db: Session = Depends(dependencies.get_db)):
     user = db.query(models.User).filter(models.User.email == login_data.email).first()

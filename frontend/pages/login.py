@@ -7,6 +7,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from utils.api_client import APIClient
 from utils.session import login_user, init_session, is_authenticated, get_user_role
+from utils.ui import render_auth_sidebar
 import os
 
 # Initialize API Client
@@ -14,6 +15,9 @@ api_base_url = os.getenv("API_BASE_URL", "http://localhost:8000/api")
 api_client = APIClient(base_url=api_base_url)
 
 def show_login_page():
+    # Sidebar Navigation
+    render_auth_sidebar(current_page="login")
+
     st.title("Login to PG Management System")
     
     # Check if already authenticated

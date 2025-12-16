@@ -8,6 +8,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from streamlit_option_menu import option_menu
 from utils.session import logout_user, init_session, is_authenticated, get_token
 from utils.api_client import APIClient
+from utils.ui import hide_sidebar_nav
 from components.room_management import render_room_management
 from components.tenant_management import render_tenant_management
 from components.rent_collection import render_rent_collection
@@ -20,6 +21,7 @@ st.set_page_config(page_title="Admin Dashboard", layout="wide", page_icon="🏢"
 
 def show_dashboard():
     init_session()
+    hide_sidebar_nav()
     
     # Security check
     if not is_authenticated():

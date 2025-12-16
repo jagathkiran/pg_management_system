@@ -19,6 +19,59 @@ def generate_random_password(length=12):
     password = ''.join(secrets.choice(alphabet) for i in range(length))
     return password
 
+@router.post("/register", response_model=schemas.TenantResponse, status_code=status.HTTP_201_CREATED)
+def register_tenant(
+    tenant: schemas.TenantCreate,
+    db: Session = Depends(get_db)
+):
+    """
+    Public registration for a new tenant.
+    """
+    if not tenant.password:
+         raise HTTPException(status_code=400, detail="Password is required for registration")
+
+    # 1. Check if user with this email already exists
+    if db.query(models.User).filter(models.User.email == tenant.email).first():
+        raise HTTPException(status_code=400, detail="Email already registered")
+
+    # 2. Check room availability if room_id is provided
+    if tenant.room_id:
+        room = db.query(models.Room).filter(models.Room.id == tenant.room_id).first()
+        if not room:
+            raise HTTPException(status_code=404, detail="Room not found")
+        if not is_room_available(room):
+            raise HTTPException(status_code=400, detail="Room is fully occupied")
+
+    # 3. Create User account
+    hashed_password = auth.get_password_hash(tenant.password)
+    
+    new_user = models.User(
+        email=tenant.email,
+        hashed_password=hashed_password,
+        role=models.UserRole.TENANT,
+        is_active=True
+    )
+    db.add(new_user)
+    db.flush() # Flush to get new_user.id without committing yet
+
+    # 4. Create Tenant record
+    # Exclude email and password from tenant_data
+    tenant_data = tenant.dict(exclude={"email", "password"})
+    new_tenant = models.Tenant(
+        **tenant_data,
+        user_id=new_user.id
+    )
+    db.add(new_tenant)
+    
+    try:
+        db.commit()
+        db.refresh(new_tenant)
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=f"Database error: {str(e)}")
+    
+    return new_tenant
+
 @router.get("/", response_model=List[schemas.TenantResponse])
 def read_tenants(
     skip: int = 0,

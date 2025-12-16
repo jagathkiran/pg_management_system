@@ -8,6 +8,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from streamlit_option_menu import option_menu
 from utils.session import logout_user, init_session, is_authenticated, get_token
 from utils.api_client import APIClient
+from utils.ui import hide_sidebar_nav
 import os
 
 # Components
@@ -20,6 +21,7 @@ st.set_page_config(page_title="Tenant Dashboard", layout="wide", page_icon="🏠
 
 def show_dashboard():
     init_session()
+    hide_sidebar_nav()
     
     if not is_authenticated():
         st.switch_page("pages/login.py")
