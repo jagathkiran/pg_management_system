@@ -44,7 +44,7 @@ class RoomCreate(RoomBase):
     pass
 
 class TenantCreate(TenantBase):
-    user_id: Optional[int] = None # Will be linked later or created
+    email: EmailStr
     room_id: Optional[int] = None
 
 class PaymentCreate(PaymentBase):

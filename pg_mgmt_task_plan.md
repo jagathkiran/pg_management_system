@@ -281,14 +281,14 @@ curl -X POST http://localhost:8000/api/rooms \
 **Dependencies**: Task 4.1
 
 **Subtasks:**
-- [ ] Create routers/tenants.py
-- [ ] Implement GET /api/tenants (list all - admin only)
-- [ ] Implement POST /api/tenants (register tenant - admin only)
-- [ ] Implement GET /api/tenants/{tenant_id} (get details)
-- [ ] Implement PUT /api/tenants/{tenant_id} (update tenant)
-- [ ] Implement POST /api/tenants/{tenant_id}/checkout (checkout)
-- [ ] Add room assignment logic
-- [ ] Add deposit tracking
+- [x] Create routers/tenants.py
+- [x] Implement GET /api/tenants (list all - admin only)
+- [x] Implement POST /api/tenants (register tenant - admin only)
+- [x] Implement GET /api/tenants/{tenant_id} (get details)
+- [x] Implement PUT /api/tenants/{tenant_id} (update tenant)
+- [x] Implement POST /api/tenants/{tenant_id}/checkout (checkout)
+- [x] Add room assignment logic
+- [x] Add deposit tracking
 
 **Deliverables:**
 - routers/tenants.py with all tenant operations
@@ -304,9 +304,9 @@ Test tenant creation and room assignment
 **Dependencies**: Task 5.1
 
 **Subtasks:**
-- [ ] Create user account when registering tenant
-- [ ] Link tenant to user account
-- [ ] Set up default password generation
+- [x] Create user account when registering tenant
+- [x] Link tenant to user account
+- [x] Set up default password generation
 - [ ] Add email notification for credentials (optional)
 
 **Deliverables:**

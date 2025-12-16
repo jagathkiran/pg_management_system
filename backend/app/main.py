@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from backend.app.routers import auth, rooms
+from backend.app.routers import auth, rooms, tenants
 from backend.app.database import engine, Base
 
 # Create tables
@@ -9,6 +9,7 @@ app = FastAPI(title="PG Management System")
 
 app.include_router(auth.router)
 app.include_router(rooms.router)
+app.include_router(tenants.router)
 
 @app.get("/")
 def read_root():
