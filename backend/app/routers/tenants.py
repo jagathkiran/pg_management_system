@@ -60,7 +60,7 @@ def create_tenant(
             raise HTTPException(status_code=400, detail="Room is fully occupied")
 
     # 3. Create User account
-    generated_password = generate_random_password()
+    generated_password = tenant.password if tenant.password else generate_random_password()
     hashed_password = auth.get_password_hash(generated_password)
     
     new_user = models.User(
@@ -73,8 +73,8 @@ def create_tenant(
     db.flush() # Flush to get new_user.id without committing yet
 
     # 4. Create Tenant record
-    # Exclude email from tenant_data as it's not in Tenant model, but in User model
-    tenant_data = tenant.dict(exclude={"email"})
+    # Exclude email and password from tenant_data
+    tenant_data = tenant.dict(exclude={"email", "password"})
     new_tenant = models.Tenant(
         **tenant_data,
         user_id=new_user.id
@@ -157,7 +157,7 @@ def update_tenant(
         db_tenant.user.email = tenant_update.email
 
     # Update Tenant fields
-    update_data = tenant_update.dict(exclude={"email"})
+    update_data = tenant_update.dict(exclude={"email", "password"})
     for key, value in update_data.items():
         setattr(db_tenant, key, value)
 

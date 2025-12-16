@@ -55,6 +55,7 @@ class RoomCreate(RoomBase):
 class TenantCreate(TenantBase):
     email: EmailStr
     room_id: Optional[int] = None
+    password: Optional[str] = None
 
 class PaymentCreate(PaymentBase):
     tenant_id: int # Tenant who made the payment
@@ -69,6 +70,7 @@ class UserResponse(UserBase):
     is_active: bool
     created_at: datetime
     updated_at: Optional[datetime] = None
+    tenant: Optional["TenantResponseWithoutRelations"] = None
 
     class Config:
         from_attributes = True # Allow ORM models to be converted

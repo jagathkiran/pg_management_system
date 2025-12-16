@@ -441,15 +441,15 @@ curl -X POST http://localhost:8000/api/payments/upload-proof \
 **Dependencies**: Task 6.3
 
 **Subtasks:**
-- [ ] Create routers/reports.py
-- [ ] Implement GET /api/reports/revenue (admin only)
-- [ ] Add monthly revenue calculation
-- [ ] Add yearly revenue calculation
-- [ ] Calculate pending payments total
-- [ ] Add date range filtering
+- [x] Create routers/reports.py (cancelled)
+- [x] Implement GET /api/reports/revenue (admin only) (cancelled)
+- [x] Add monthly revenue calculation (cancelled)
+- [x] Add yearly revenue calculation (cancelled)
+- [x] Calculate pending payments total (cancelled)
+- [x] Add date range filtering (cancelled)
 
 **Deliverables:**
-- Revenue reporting endpoint
+- Revenue reporting endpoint (cancelled)
 
 ---
 
@@ -459,14 +459,14 @@ curl -X POST http://localhost:8000/api/payments/upload-proof \
 **Dependencies**: Task 5.1
 
 **Subtasks:**
-- [ ] Implement GET /api/reports/occupancy
-- [ ] Calculate occupancy rate
-- [ ] List vacant rooms
-- [ ] List occupied rooms
-- [ ] Add historical occupancy tracking
+- [x] Implement GET /api/reports/occupancy (cancelled)
+- [x] Calculate occupancy rate (cancelled)
+- [x] List vacant rooms (cancelled)
+- [x] List occupied rooms (cancelled)
+- [x] Add historical occupancy tracking (cancelled)
 
 **Deliverables:**
-- Occupancy reporting endpoint
+- Occupancy reporting endpoint (cancelled)
 
 ---
 
@@ -476,14 +476,14 @@ curl -X POST http://localhost:8000/api/payments/upload-proof \
 **Dependencies**: Task 6.3, Task 7.2
 
 **Subtasks:**
-- [ ] Implement GET /api/reports/tenant/{tenant_id}
-- [ ] Include payment history
-- [ ] Include maintenance requests
-- [ ] Calculate payment punctuality
-- [ ] Add export functionality
+- [x] Implement GET /api/reports/tenant/{tenant_id} (cancelled)
+- [x] Include payment history (cancelled)
+- [x] Include maintenance requests (cancelled)
+- [x] Calculate payment punctuality (cancelled)
+- [x] Add export functionality (cancelled)
 
 **Deliverables:**
-- Individual tenant report endpoint
+- Individual tenant report endpoint (cancelled)
 
 ---
 
@@ -495,11 +495,11 @@ curl -X POST http://localhost:8000/api/payments/upload-proof \
 **Dependencies**: Task 3.2
 
 **Subtasks:**
-- [ ] Install Streamlit and dependencies
-- [ ] Create app.py (main entry point)
-- [ ] Set up page configuration
-- [ ] Create utils/api_client.py for API calls
-- [ ] Test API connectivity
+- [x] Install Streamlit and dependencies
+- [x] Create app.py (main entry point)
+- [x] Set up page configuration
+- [x] Create utils/api_client.py for API calls
+- [x] Test API connectivity
 
 **Deliverables:**
 - Basic Streamlit app running
@@ -518,14 +518,14 @@ streamlit run frontend/app.py
 **Dependencies**: Task 9.1
 
 **Subtasks:**
-- [ ] Create api_client.py
-- [ ] Implement login function
-- [ ] Implement GET request function with auth
-- [ ] Implement POST request function with auth
-- [ ] Implement PUT request function with auth
-- [ ] Implement file upload function
-- [ ] Add error handling
-- [ ] Add token refresh logic
+- [x] Create api_client.py
+- [x] Implement login function
+- [x] Implement GET request function with auth
+- [x] Implement POST request function with auth
+- [x] Implement PUT request function with auth
+- [x] Implement file upload function
+- [x] Add error handling
+- [x] Add token refresh logic
 
 **Deliverables:**
 - Complete API client utility
@@ -538,12 +538,12 @@ streamlit run frontend/app.py
 **Dependencies**: Task 9.2
 
 **Subtasks:**
-- [ ] Create utils/session.py
-- [ ] Implement session state initialization
-- [ ] Add token storage in session
-- [ ] Add user info storage
-- [ ] Implement logout functionality
-- [ ] Add session timeout handling
+- [x] Create utils/session.py
+- [x] Implement session state initialization
+- [x] Add token storage in session
+- [x] Add user info storage
+- [x] Implement logout functionality
+- [x] Add session timeout handling
 
 **Deliverables:**
 - Session management utility
@@ -558,13 +558,13 @@ streamlit run frontend/app.py
 **Dependencies**: Task 9.3
 
 **Subtasks:**
-- [ ] Create pages/login.py
-- [ ] Design login form (email, password)
-- [ ] Implement login logic
-- [ ] Add error messages
-- [ ] Add "Remember Me" option (optional)
-- [ ] Style the login page
-- [ ] Add PG logo/branding
+- [x] Create pages/login.py
+- [x] Design login form (email, password)
+- [x] Implement login logic
+- [x] Add error messages
+- [x] Add "Remember Me" option (optional)
+- [x] Style the login page
+- [x] Add PG logo/branding
 
 **Deliverables:**
 - Working login page
@@ -582,12 +582,12 @@ streamlit run frontend/app.py
 **Dependencies**: Task 10.1
 
 **Subtasks:**
-- [ ] Create routing logic in app.py
-- [ ] Check user role after login
-- [ ] Route to management dashboard if admin
-- [ ] Route to tenant dashboard if tenant
-- [ ] Add logout button in all pages
-- [ ] Implement session persistence
+- [x] Create routing logic in app.py
+- [x] Check user role after login
+- [x] Route to management dashboard if admin
+- [x] Route to tenant dashboard if tenant
+- [x] Add logout button in all pages
+- [x] Implement session persistence
 
 **Deliverables:**
 - Role-based routing system
@@ -602,12 +602,12 @@ streamlit run frontend/app.py
 **Dependencies**: Task 10.2
 
 **Subtasks:**
-- [ ] Create pages/management_dashboard.py
-- [ ] Add sidebar navigation menu
-- [ ] Create dashboard sections (Rooms, Tenants, Payments, Maintenance)
-- [ ] Add logout button
-- [ ] Display admin user info
-- [ ] Add styling with CSS
+- [x] Create pages/management_dashboard.py
+- [x] Add sidebar navigation menu
+- [x] Create dashboard sections (Rooms, Tenants, Payments, Maintenance)
+- [x] Add logout button
+- [x] Display admin user info
+- [x] Add styling with CSS
 
 **Deliverables:**
 - Management dashboard layout
@@ -620,14 +620,14 @@ streamlit run frontend/app.py
 **Dependencies**: Task 11.1, Task 4.1
 
 **Subtasks:**
-- [ ] Create components/room_management.py
-- [ ] Display all rooms in a table/cards
-- [ ] Add "Add Room" form
-- [ ] Add "Edit Room" functionality
-- [ ] Add "Delete Room" functionality
-- [ ] Show occupancy status
-- [ ] Add filter by availability
-- [ ] Add search functionality
+- [x] Create components/room_management.py
+- [x] Display all rooms in a table/cards
+- [x] Add "Add Room" form
+- [x] Add "Edit Room" functionality
+- [x] Add "Delete Room" functionality
+- [x] Show occupancy status
+- [x] Add filter by availability
+- [x] Add search functionality
 
 **Deliverables:**
 - Complete room management interface
@@ -646,14 +646,14 @@ streamlit run frontend/app.py
 **Dependencies**: Task 11.1, Task 5.1
 
 **Subtasks:**
-- [ ] Create components/tenant_management.py
-- [ ] Display all tenants in table
-- [ ] Add "Register Tenant" form
-- [ ] Include room assignment dropdown
-- [ ] Add deposit tracking
-- [ ] Show tenant details modal
-- [ ] Add checkout functionality
-- [ ] Add filter by active/inactive
+- [x] Create components/tenant_management.py
+- [x] Display all tenants in table
+- [x] Add "Register Tenant" form
+- [x] Include room assignment dropdown
+- [x] Add deposit tracking
+- [x] Show tenant details modal
+- [x] Add checkout functionality
+- [x] Add filter by active/inactive
 
 **Deliverables:**
 - Complete tenant management interface
@@ -671,14 +671,14 @@ streamlit run frontend/app.py
 **Dependencies**: Task 11.1, Task 6.2
 
 **Subtasks:**
-- [ ] Create components/rent_collection.py
-- [ ] Display pending payments
-- [ ] Show payment proof images
-- [ ] Add approve/reject buttons
-- [ ] Add remarks field
-- [ ] Display payment history
-- [ ] Add filtering by month/status
-- [ ] Show payment statistics
+- [x] Create components/rent_collection.py
+- [x] Display pending payments
+- [x] Show payment proof images
+- [x] Add approve/reject buttons
+- [x] Add remarks field
+- [x] Display payment history
+- [x] Add filtering by month/status
+- [x] Show payment statistics
 
 **Deliverables:**
 - Complete rent collection interface
